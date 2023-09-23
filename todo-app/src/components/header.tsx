@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { User } from "../server";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 interface Prop {
@@ -15,6 +15,14 @@ export default function Header({ loggedUser, handleLogout }: Prop) {
     function handleMenuToggle() {
         setMenu(!menu)
     }
+
+    useEffect(() => {
+        if (window.innerWidth < 500) {
+            setMenu(false)
+        } else {
+            setMenu(true)
+        }
+    }, [])
 
     return (
         <div className="header container">
