@@ -25,7 +25,7 @@ export default function Header({ loggedUser, handleLogout }: Prop) {
     }, [])
 
     return (
-        <div className="header container">
+        <div className="header">
             <Link to="/" className="logo"><h1>TodoApp</h1></Link>
             <div className="menu-icon" onClick={handleMenuToggle}>Menu</div>
             {menu && <div className="nav-links">

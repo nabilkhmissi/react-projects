@@ -26,7 +26,7 @@ export default function AddTodo() {
         setStatus('submitting');
         setError(null);
 
-        if (!form.title || form.content) setError("Please fill all fields");
+        if (!form.title || !form.content) setError("Please fill all fields");
 
         if (params.id) {
             updateTodo(params.id, { ...form })
